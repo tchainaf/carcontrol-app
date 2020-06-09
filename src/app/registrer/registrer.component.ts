@@ -8,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class RegistrerComponent implements OnInit {
 
   constructor() { }
+  
+  nome:string;
+  sobrenome:string;
+  telefone:number;
+  email:string;
+  senha:string;
+  quilometragem:number;
 
   ngOnInit(): void {
   }
