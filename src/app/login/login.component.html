@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html>  
-
-<body>
-    
-    <a href="/registrer">Criar Conta</a>
-    <br>
-    
-    <label for="email">Email:</label>
-    <input id="email" type="text" [(ngModel)]="email">    
-    <br>
-    <label for="senha">Senha:</label>
-    <input id="senha" type="password" [(ngModel)]="senha"> 
-    <br>
-<!--   <button (click)="">Login</button>-->
-    
-</body>    
-    
-    
-    
-</html>
+<div>
+	<div class="row">
+		<label for="email">Email:</label>
+		<input id="email" type="text" [(ngModel)]="email">
+	</div>
+	<br>
+	<div class="row">
+		<label for="senha">Senha:</label>
+		<input id="senha" type="password" [(ngModel)]="senha">
+	</div>
+	<br>
+	<button class="btn btn-primary" (click)="onSubmit()">Login</button>
+</div>

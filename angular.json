@@ -29,7 +29,8 @@
 						],
 						"styles": [
 							"node_modules/bootstrap/scss/bootstrap.scss",
-							"src/styles.scss"
+							"src/styles.scss",
+							"node_modules/ngx-toastr/toastr.css"
 						],
 						"scripts": [
 							"node_modules/jquery/dist/jquery.min.js",
@@ -97,7 +98,8 @@
 						],
 						"styles": [
 							"node_modules/bootstrap/scss/bootstrap.scss",
-							"src/styles.scss"
+							"src/styles.scss",
+							"node_modules/ngx-toastr/toastr.css"
 						],
 						"scripts": [
 							"node_modules/jquery/dist/jquery.min.js",
