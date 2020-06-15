@@ -16,12 +16,18 @@ import { NotificationService } from './services/notification.service';
 import { AuthService } from './services/auth.service';
 import { UserService } from './services/user.service';
 import { AutomobileService } from './services/automobile.service';
+import { NewcompComponent } from './newcomp/newcomp.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { HowitworksComponent } from './howitworks/howitworks.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		LoginComponent,
 		RegisterComponent,
+		NewcompComponent,
+		AboutusComponent,
+		HowitworksComponent,
 	],
 	imports: [
 		BrowserModule,
