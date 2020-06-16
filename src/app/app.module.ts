@@ -19,6 +19,8 @@ import { AutomobileService } from './services/automobile.service';
 import { NewcompComponent } from './newcomp/newcomp.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { HowitworksComponent } from './howitworks/howitworks.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
 	declarations: [
@@ -28,6 +30,8 @@ import { HowitworksComponent } from './howitworks/howitworks.component';
 		NewcompComponent,
 		AboutusComponent,
 		HowitworksComponent,
+		FooterComponent,
+		HeaderComponent,
 	],
 	imports: [
 		BrowserModule,

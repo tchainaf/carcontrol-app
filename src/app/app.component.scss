@@ -1,39 +1,34 @@
 @import "~@ng-select/ng-select/themes/ant.design.theme.css";
+
+
 p {
     font-family: monospace;
 }
 
-header {
-    background-color: #004AAB;
-    display: inline-block;
-    height: 80px;
-    width: 100%; 
-    position: absolute;
-    color: white;
+section {
+//    background-color: aqua;
+//    float: left;
+//    width: 50%;
+//    height: 100%;
+    display:grid;
+//    padding: 20px;
 }
-
-footer {
-    background-color: #004AAB;
-    color: #fff;
-    letter-spacing: 1px;
-    font-size: 16px;
-    text-align: center;    
-    bottom:0;
-    position: fixed;
-    width:100%; 
-    padding: 7px;
-    display: inline-block;
-}
-
 aside {
-    display: block;
-    font-size: 14px;
-    width: 55%;
-    height: 100%;
-    background-color: white;
+    width: 50%;
+    margin: 10px;
+    height: 500px;
+    padding-left: 15px;
+    margin-left: 15px;
     float: right;
-    padding: 200px;
+    background-color: lightgray;
+    padding: 6%;
+    display: grid;
 }
+
+h2{ 
+    color: #973C6C;
+}
+        
 //botao{
 //    float: center;
 //    text-align: center;

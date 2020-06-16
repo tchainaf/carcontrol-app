@@ -2,57 +2,27 @@
 
 <head>
 	<title>{{ title }}</title>
-    
-    <style>
-        aside {
-            display: block;
-            font-size: 14px;
-            width: 55%;
-            height: 100%;
-            background-color: white;
-            float: right;
-            padding: 200px;
-        }
-        btn{
-            font-size: 14px;
-            background-color: #96DFCE;
-            border-radius: 5px;
-            padding: 10px;
-            margin: 10px;
-            float: center;
-            width: 100px;
-        }
-        h2{ 
-            color: #973C6C;
-        }
-    
-    </style>
 </head>
 
 <body>
-	<router-outlet></router-outlet>
-    <header><a href="/"><img scr="assets/24de2098-fae5-43bb-b5d4-1acd83018182.jpeg" alt="CarControl"></a>
-    </header>
+
+    <app-header></app-header>
     
+    
+    <router-outlet></router-outlet>
     <section><br><br><br>
-        <img scr="https://quatrorodas.abril.com.br/wp-content/uploads/2020/03/dscf5856.dng_-e1588959378786.jpg?quality=70&strip=info" alt="carrotunado" width=60 height=40>
+        <img src="assets/imgs/carraotunado.png">
     </section>
 
     <aside>
         <h1>Controle a vida útil e analise a saúde do seu automóvel em poucos cliques!</h1><br>
         <h2>100% Gratuito!</h2><br>
-        <div class="btn"><a href="/register">Cadastrar</a></div>
+        <a href="/register">Cadastrar</a>
         <br><br>
-        <div class="btn"><a href="/login">Logar</a></div>
+        <a href="/login">Logar</a>
     </aside>
 
 
+    <app-footer></app-footer>
     
-    <footer>
-        <a href="/howitworks">COMO FUNCIONA</a>⠀⠀⠀⠀⠀⠀⠀⠀⠀•⠀⠀⠀⠀⠀⠀⠀⠀⠀<a href="/aboutus">QUEM SOMOS NÓS</a>⠀⠀⠀⠀⠀⠀⠀⠀⠀•⠀⠀⠀⠀⠀⠀⠀⠀⠀<a href="google.com">AJUDA</a>
-    </footer>
 </body>
-
-<footer>
-
-</footer>
