@@ -1,14 +1,20 @@
 
-<div>
-	<div class="row">
-		<label for="email">Email:</label>
-		<input id="email" type="text" [(ngModel)]="email">
-	</div>
-	<br>
-	<div class="row">
-		<label for="senha">Senha:</label>
-		<input id="senha" type="password" [(ngModel)]="senha">
-	</div>
-	<br>
-	<button class="btn btn-primary" (click)="onSubmit()">Login</button>
-</div>
+<body>
+    <section>
+        <div>
+            <br><br><br><br><br><br>
+            <div class="row">
+                <label for="email">EMAIL⠀ </label><br>
+                <input id="email" type="text" [(ngModel)]="email" style="width:400px">
+            </div>
+            <br>
+            <div class="row">
+                <label for="senha">SENHA⠀ </label><br>
+                <input id="senha" type="password" [(ngModel)]="senha" style="width:250px">
+            </div>
+            <br><br>
+            <button class="btn btn-primary" (click)="onSubmit()" style="width:200px">LOGIN</button>
+        </div>
+        <br>
+    </section>
+</body>

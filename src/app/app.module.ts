@@ -21,6 +21,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { HowitworksComponent } from './howitworks/howitworks.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
 	declarations: [
@@ -32,6 +33,7 @@ import { HeaderComponent } from './components/header/header.component';
 		HowitworksComponent,
 		FooterComponent,
 		HeaderComponent,
+		DashboardComponent,
 	],
 	imports: [
 		BrowserModule,
