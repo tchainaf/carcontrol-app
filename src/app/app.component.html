@@ -1,28 +1,25 @@
-<!DOCTYPE html>
-
 <head>
 	<title>{{ title }}</title>
 </head>
 
+<app-header></app-header>
+
 <body>
+	<router-outlet></router-outlet>
 
-    <app-header></app-header>
-    
-    
-    <router-outlet></router-outlet>
-    <section><br><br><br>
-        <img src="assets/imgs/carraotunado.png">
-    </section>
+	<div class="row">
+		<div class="col-sm-6">
+			<img src="assets/imgs/carraotunado.png">
+		</div>
 
-    <aside>
-        <h1>Controle a vida útil e analise a saúde do seu automóvel em poucos cliques!</h1><br>
-        <h2>100% Gratuito!</h2><br>
-        <a href="/register">Cadastrar</a>
-        <br><br>
-        <a href="/login">Logar</a>
-    </aside>
-
-
-    <app-footer></app-footer>
-    
+		<div class="col-sm-6">
+			<h1>Controle a vida útil e analise a saúde do seu automóvel em poucos cliques!</h1><br>
+			<h2>100% Gratuito!</h2><br>
+			<a href="/register">Cadastrar</a>
+			<br><br>
+			<a href="/login">Logar</a>
+		</div>
+	</div>
 </body>
+
+<app-footer></app-footer>
