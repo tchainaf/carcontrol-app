@@ -10,10 +10,13 @@ section {
 //    float: left;
 //    width: 50%;
 //    height: 100%;
-    display:grid;
+
+    padding: 20px;
+    float: center;
 //    padding: 20px;
 }
 aside {
+    margin-top: -400px;
     width: 50%;
     margin: 10px;
     height: 500px;
@@ -22,7 +25,7 @@ aside {
     float: right;
     background-color: lightgray;
     padding: 6%;
-    display: grid;
+//    display: grid;
 }
 
 h2{ 
