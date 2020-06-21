@@ -1,35 +1,38 @@
 <section>
     <div>
-        <br><br><br><br><br>
+        <br><br><br><br>
+        <div class="col-sm-12">
+ 
+        <h3>Faça seu cadastro: </h3>
         <div class="row">
-            <label for="nome">NOME⠀</label>
+            <label for="nome">NOME:⠀</label>
             <input id="nome" type="text" [(ngModel)]="nome" style="width:300px">
         </div>
         <br>
         <div class="row">
-            <label for="sobrenome">SOBRENOME⠀ </label>
+            <label for="sobrenome">SOBRENOME:⠀</label>
             <input id="sobrenome" type="text" [(ngModel)]="sobrenome" style="width:300px">
         </div>
         <br>
         <div class="row">
-            <label for="telefone">TELEFONE⠀</label>
+            <label for="telefone">TELEFONE:⠀</label>
             <input id="telefone" type="text" [(ngModel)]="telefone" style="width:200px">
         </div>
         <br>
         <div class="row">
-            <label for="email">EMAIL⠀</label>
+            <label for="email">EMAIL:⠀</label>
             <input id="email" type="email" [(ngModel)]="email" style="width:500px">
         </div>
         <br>
         <div class="row">
-            <label for="senha">SENHA⠀</label>
+            <label for="senha">SENHA:⠀</label>
             <input id="senha" type="password" [(ngModel)]="senha" style="width:300px">
         </div>
-        <br>
+        <br><br>
         
-        <p>Cadastre seu primeiro carro:</p>
+        <h3>Cadastre seu primeiro carro:</h3>
         <div class="row">
-            <label>Tipo de automóvel:</label>
+            <label>TIPO DE AUTOMÓVEL:⠀</label>
             <ng-select id='tipo_automovel' [items]="tipos" bindValue="Tipo_ID" bindLabel="tipo" multiple="false"
                 [virtualScroll]="true" placeholder="Selecione o Tipo" [(ngModel)]="tipoSelecionado"
                 (change)="onTypeSelect()" style="float: center">
@@ -37,18 +40,19 @@
         </div>
         <br>
         <div class="row">
-            <label>Automóvel:</label>
+            <label>AUTOMÓVEL:⠀</label>
             <ng-select id='automovel' [items]="automoveis" bindValue="Automovel_ID" bindLabel="desc" multiple="false"
                 [virtualScroll]="true" placeholder="Selecione o Automóvel" [(ngModel)]="automovelSelecionado">
             </ng-select>
         </div>
         <br>
         <div class="row">
-            <label for="quilometragem">Quilometragem rodada:</label>
+            <label for="quilometragem">QUILOMETRAGEM RODADA:⠀</label>
             <input id="quilometragem" type="text" [(ngModel)]="quilometragem">
         </div>
         <br>
 
         <button class="btn btn-primary" (click)="onSubmit()" style="width:200px">CRIAR CONTA</button>
+        </div>
     </div>
 </section>

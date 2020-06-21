@@ -5,39 +5,22 @@ p {
     font-family: monospace;
 }
 
-section {
-//    background-color: aqua;
-//    float: left;
-//    width: 50%;
-//    height: 100%;
-
-    padding: 20px;
-    float: center;
-//    padding: 20px;
-}
-aside {
-    margin-top: -400px;
-    width: 50%;
-    margin: 10px;
-    height: 500px;
-    padding-left: 15px;
-    margin-left: 15px;
-    float: right;
-    background-color: lightgray;
-    padding: 6%;
-//    display: grid;
+h1{
+    color: #58646D;
+    font-size: 60px;
 }
 
 h2{
-    color: #973C6C;
+    color: #96DFCE;
+    font-size: 50px;
 }
 
-//botao{
-//    float: center;
-//    text-align: center;
-//    width: 100px;
-//    background-color: blueviolet;
-//    padding: 10px;
-//    border: 10px;
-//    font-size: 72px;
-// }
+button{
+    background-color: #973C6C;
+    border-radius: 40px;
+    height: 50px;
+    box-shadow: 1px 1px 2px #dcdcdc;
+    border: 1px solid #973C6C;
+    letter-spacing: 2px;
+    font-size: 20px;
+}

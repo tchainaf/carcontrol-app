@@ -5,6 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { NewcompComponent } from './newcomp/newcomp.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { HowitworksComponent } from './howitworks/howitworks.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [{
 	path: 'login',
@@ -21,6 +22,10 @@ const routes: Routes = [{
 {
     path: 'aboutus',
 	component: AboutusComponent
+},
+{
+	path: 'dashboard',
+	component: DashboardComponent    
 },
 {
 	path: 'howitworks',
