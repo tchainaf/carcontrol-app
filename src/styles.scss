@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/ant.design.theme.css";
+
+html, body {
+    height: 100%;
+}
 
 .row{
 	display: flex;
@@ -14,4 +19,14 @@ input{
 	padding-left: 13px;
 	color: #8E8E8E;
 	font-size: 13px;
+}
+
+button{
+    background-color: #973C6C;
+    border-radius: 40px;
+    height: 50px;
+    box-shadow: 1px 1px 2px #dcdcdc;
+    border: 1px solid #973C6C;
+    letter-spacing: 2px;
+    font-size: 20px;
 }

@@ -1,5 +1,7 @@
-@import "~@ng-select/ng-select/themes/ant.design.theme.css";
-
+.wrapper {
+    height:auto !important;
+    min-height:90%;
+}
 
 p {
     font-family: monospace;
@@ -13,14 +15,4 @@ h1{
 h2{
     color: #96DFCE;
     font-size: 50px;
-}
-
-button{
-    background-color: #973C6C;
-    border-radius: 40px;
-    height: 50px;
-    box-shadow: 1px 1px 2px #dcdcdc;
-    border: 1px solid #973C6C;
-    letter-spacing: 2px;
-    font-size: 20px;
 }

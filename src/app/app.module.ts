@@ -19,9 +19,10 @@ import { AutomobileService } from './services/automobile.service';
 import { NewcompComponent } from './newcomp/newcomp.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { HowitworksComponent } from './howitworks/howitworks.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './template/footer/footer.component';
+import { HeaderComponent } from './template/header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
 	declarations: [
@@ -34,6 +35,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 		FooterComponent,
 		HeaderComponent,
 		DashboardComponent,
+		HomeComponent,
 	],
 	imports: [
 		BrowserModule,
