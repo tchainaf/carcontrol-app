@@ -7,6 +7,8 @@ import { NewcompComponent } from './newcomp/newcomp.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { HowitworksComponent } from './howitworks/howitworks.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AutomobileComponent } from './automobile/automobile.component';
 
 const routes: Routes = [{
 	path: 'login',
@@ -30,6 +32,14 @@ const routes: Routes = [{
 },
 {
 	path: 'howitworks',
+	component: HowitworksComponent
+},
+{
+	path: 'automobile',
+	component: HowitworksComponent
+},
+{
+	path: 'profile',
 	component: HowitworksComponent
 },
 {

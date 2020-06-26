@@ -23,6 +23,8 @@ import { FooterComponent } from './template/footer/footer.component';
 import { HeaderComponent } from './template/header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AutomobileComponent } from './automobile/automobile.component';
 
 @NgModule({
 	declarations: [
@@ -36,6 +38,8 @@ import { HomeComponent } from './home/home.component';
 		HeaderComponent,
 		DashboardComponent,
 		HomeComponent,
+		ProfileComponent,
+		AutomobileComponent,
 	],
 	imports: [
 		BrowserModule,

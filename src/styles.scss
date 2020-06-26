@@ -23,11 +23,24 @@ input{
 
 button{
     background-color: #973C6C;
-    color: white;
     border-radius: 40px;
     height: 50px;
-    box-shadow: 1px 1px 3px #000;
-    border: 1px solid #973C6C;
-    letter-spacing: 2px;
-    font-size: 20px;
+    box-shadow: 1px 1px 2px #dcdcdc;
+	border: 1px solid #973C6C;
+	color: white;
+	letter-spacing: 2px;
+}
+
+button:hover{
+	background-color: #004AAB;
+}
+
+a:link
+{
+ text-decoration:none;
+}
+
+h2{
+    border-bottom: 4px solid #96DFCE;
+    padding-bottom: 1px;
 }
