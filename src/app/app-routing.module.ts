@@ -36,11 +36,11 @@ const routes: Routes = [{
 },
 {
 	path: 'automobile',
-	component: HowitworksComponent
+	component: AutomobileComponent
 },
 {
 	path: 'profile',
-	component: HowitworksComponent
+	component: ProfileComponent
 },
 {
 	path: '',
