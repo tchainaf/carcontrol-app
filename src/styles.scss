@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+/*paleta utilizada
+#58646D cinza
+#F0E79D amarelo
+#96DFCE turquesa
+#203C7F azul
+#973C6C rosa*/
+
+
 @import "~@ng-select/ng-select/themes/ant.design.theme.css";
 
 html, body {
@@ -40,7 +48,13 @@ a:link
  text-decoration:none;
 }
 
-h2{
+/*h2{
     border-bottom: 4px solid #96DFCE;
     padding-bottom: 1px;
+}*/
+.secao{
+	padding: 60px;
+	font-size: 42px;
+	margin-bottom: 10px;
+	text-align: center;
 }
