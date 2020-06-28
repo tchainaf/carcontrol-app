@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { NewcompComponent } from './newcomp/newcomp.component';
-import { AboutusComponent } from './aboutus/aboutus.component';
-import { HowitworksComponent } from './howitworks/howitworks.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProfileComponent } from './profile/profile.component';
-import { AutomobileComponent } from './automobile/automobile.component';
-import { ComplistComponent } from './complist/complist.component';
+import { HomeComponent } from './external/home/home.component';
+import { LoginComponent } from './external/login/login.component';
+import { RegisterComponent } from './external/register/register.component';
+import { NewcompComponent } from './internal/newcomp/newcomp.component';
+import { AboutusComponent } from './external/aboutus/aboutus.component';
+import { HowitworksComponent } from './external/howitworks/howitworks.component';
+import { DashboardComponent } from './internal/dashboard/dashboard.component';
+import { ProfileComponent } from './internal/profile/profile.component';
+import { AutomobileComponent } from './internal/automobile/automobile.component';
+import { ComplistComponent } from './internal/complist/complist.component';
 
 const routes: Routes = [{
 	path: 'login',

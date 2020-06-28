@@ -4,14 +4,14 @@
         <!-- NAVEGAÇÃO LATERAL -->
         <!-- <app-header></app-header> -->
         <mat-drawer #drawer class="example-sidenav" mode="side">
-            <a href="/dashboard" style="color:white">HOME</a><br>
-            <a href="/profile" style="color:white">MEU PERFIL</a><br>
-            <a href="/automobile" style="color:white">MEU AUTOMÓVEL</a><br>
-            <a href="/complist" style="color:white">MINHAS PEÇAS</a><br>
-            <a href="/" style="color:white">SAIR</a><br>
+            <a href="/dashboard">HOME</a><br>
+            <a href="/profile">MEU PERFIL</a><br>
+            <a href="/automobile">MEU AUTOMÓVEL</a><br>
+            <a href="/complist">MINHAS PEÇAS</a><br>
+            <a href="/">SAIR</a><br>
         </mat-drawer>
         <div class="example-sidenav-content">
-            <div class="btnmenu" mat-button (click)="drawer.toggle()"><img src="assets/imgs/menuicon.png" style="margin-top: -15px;" width="60px" height="60px"></div>
+            <div class="btnmenu" mat-button (click)="drawer.toggle()"><img src="assets/imgs/menuicon.png" style="margin-top: -10px;" width="60px" height="60px"></div>
             <a href="/"><img src="assets/imgs/logo.jpeg" alt="logo" style="float: right;" width="240px" height="60px"></a>
             <!-- <button type="button" mat-button (click)="drawer.toggle()">MENU</button> -->
         </div>

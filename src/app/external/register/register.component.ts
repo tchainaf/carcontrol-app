@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AutomobileService } from '../services/automobile.service';
-import { UserService } from '../services/user.service';
-import { NotificationService } from '../services/notification.service';
+import { AutomobileService } from '../../services/automobile.service';
+import { UserService } from '../../services/user.service';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
 	selector: 'app-register',

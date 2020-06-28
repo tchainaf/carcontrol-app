@@ -94,8 +94,8 @@ label{
   .example-sidenav {
     padding-top: 150px;
     padding-left: 40px;
-    background-color: #004AAB;
-    color: white;
+    background-color: white;
+    color: #004AAB;
     width: 20%;
     height: 100%;
     font-size: 14px;
@@ -122,3 +122,11 @@ label{
 }
 
   //FIM MENU LATERAL
+  
+  a {
+      color: #004AAB;
+  }
+
+  a:hover{
+    color: #96DFCE;
+  }
