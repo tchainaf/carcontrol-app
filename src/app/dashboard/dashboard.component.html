@@ -1,43 +1,24 @@
-<mat-drawer-container class="example-container" autosize style="height: 100%;">
-    <!-- NAVEGAÇÃO LATERAL -->
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-        <a href="/dashboard" style="color:white">HOME</a><br>
-        <a href="/profile" style="color:white">MEU PERFIL</a><br>
-        <a href="/automobile" style="color:white">MEU AUTOMÓVEL</a><br>
-        <a href="/complist" style="color:white">MINHAS PEÇAS</a><br>
-        <a href="/" style="color:white">SAIR</a><br>
-    </mat-drawer>
-    <!-- FIM DA NAVEGAÇÃO LATERAL -->
-
-    <div class="example-sidenav-content">
-        <div class="btnmenu" mat-button (click)="drawer.toggle()"> MENU</div>
-        <!-- <button type="button" mat-button (click)="drawer.toggle()">MENU</button> -->
+<div class="row">
+    <div class="col-sm-3" style="padding-bottom: 300px">
+        <div class="secao1">
+            <h3>BEM VINDO, <br><label>Fulano</label></h3>
+        </div>
+        <div class="secao1">
+            <p style="text-align: center;">Insira a atual quilometragem:</p>
+            <input><br>
+            <button style="width:94%">ATUALIZAR QUILOMETRAGEM</button>
+        </div>
+        <div class="secao1">
+            <p style="text-align: center;">Próxima troca de Peça:</p>
+            <div class="lista" style="height:140px" style="width:97%">
+                <label></label>
+            </div>
+            <button style="width:94%">ADICIONAR PEÇA</button>
+        </div><br>
     </div>
 
-    <div class="row">
-        <div class="col-sm-3" style="padding-bottom: 300px">
-            <div class="secao1">
-                <h3>BEM VINDO, <br><label>Fulano</label></h3>
-            </div>
-            <div class="secao1">
-                <p style="text-align: center;">Insira a atual quilometragem:</p>
-                <input><br>
-                <button style="width:94%">ATUALIZAR QUILOMETRAGEM</button>
-            </div>
-            <div class="secao1">
-                <p style="text-align: center;">Próxima troca de Peça:</p>
-                <div class="lista" style="height:140px" style="width:97%">
-                    <label></label>
-                </div>
-                <button style="width:94%">ADICIONAR PEÇA</button>
-            </div><br>
-        </div>
-
-        <!-- AQUI A GENTE INSERE A DASHBOARD DO POWER BI -->
-        <div class="col-sm-9">
-            <p>Dashboard</p>
-        </div>
-        <!-- FIM DA DASH -->
+    <!-- AQUI A GENTE INSERE A DASHBOARD DO POWER BI -->
+    <div class="col-sm-9">
+        <p>Dashboard</p>
     </div>
-
-</mat-drawer-container>
+    <!-- FIM DA DASH -->

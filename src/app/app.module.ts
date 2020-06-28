@@ -26,7 +26,9 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AutomobileComponent } from './automobile/automobile.component';
 import { ComplistComponent } from './complist/complist.component';
+
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
 	declarations: [
@@ -52,7 +54,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 		BrowserAnimationsModule,
 		ToastrModule.forRoot(),
         NgSelectModule,
-        MatSidenavModule
+        MatSidenavModule,
+        MatExpansionModule
 	],
 	providers: [
 		CookieService,
