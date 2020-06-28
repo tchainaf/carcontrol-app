@@ -1,12 +1,12 @@
 
 .col-sm-3{
-    background-color: #fff;
     height:100%;
     padding: 2px;
 }
 .col-sm-9{
     background-color: #dcdcdc;
     padding: 2px;
+    border-radius: 18px;
 }
 
 .secao1{
@@ -14,7 +14,7 @@
     float: center;
     background-color: #e9e9e9;
     box-shadow: 1px 1px 1px #f9f9f9;
-    padding: 14px;
+    padding: 24px;
     margin: 6px;
     height: 40%;
     width: 97%;
@@ -23,11 +23,6 @@
 .secao1:hover{
     background-color:#96DFCE;
 }
-
-
-body, html{
-    height: 100%;
-  }
 
   input, .lista{
     background-color: #f8f8f8;
@@ -51,4 +46,13 @@ button:hover{
     background-color: #973C6C;
     border: 1px solid #973C6C;
     width: 95%;
+}
+
+h3{
+	text-align: center;
+	font-size: 30px;
+}
+p{
+    font-size: 18px;
+    text-align: center;
 }

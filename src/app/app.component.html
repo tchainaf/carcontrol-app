@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" style="background-color: white;">
 
     <mat-drawer-container class="example-container" autosize style="height: 100%;">
         <!-- NAVEGAÇÃO LATERAL -->
@@ -11,13 +11,13 @@
             <a href="/" style="color:white">SAIR</a><br>
         </mat-drawer>
         <div class="example-sidenav-content">
-            <div class="btnmenu" mat-button (click)="drawer.toggle()"><img src="assets/imgs/menuicon.png" width="60px" height="60px"></div>
+            <div class="btnmenu" mat-button (click)="drawer.toggle()"><img src="assets/imgs/menuicon.png" style="margin-top: -15px;" width="60px" height="60px"></div>
             <a href="/"><img src="assets/imgs/logo.jpeg" alt="logo" style="float: right;" width="240px" height="60px"></a>
             <!-- <button type="button" mat-button (click)="drawer.toggle()">MENU</button> -->
         </div>
         <!-- FIM DA NAVEGAÇÃO LATERAL -->
     
-        <div class="container" style="padding-bottom: 700px;">
+        <div class="container" style="padding-bottom: 200px;">
             <!-- CONTEUDO DA PAGINA -->
             <router-outlet></router-outlet>
             <!-- FIM DO CONTEUDO DA PAGINA -->
