@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AutomobileService } from '../../services/automobile.service';
 import { UserService } from '../../services/user.service';
 import { NotificationService } from '../../services/notification.service';
+import { User } from '../../models/user.model';
 
 @Component({
 	selector: 'app-register',
@@ -15,14 +16,8 @@ export class RegisterComponent implements OnInit {
 		private notifyService: NotificationService
 	) { }
 
-	nome: string;
-	sobrenome: string;
-	telefone: number;
-	email: string;
-	senha: string;
-	quilometragem: number;
+	usuario: User;
 	tipoSelecionado: any;
-	automovelSelecionado: any;
 
 	tipos: { [key: string]: Object; }[];
 	public fieldsTypeAuto: Object = { text: 'tipo', value: 'Tipo_ID' };
@@ -45,7 +40,6 @@ export class RegisterComponent implements OnInit {
 	//FT-01# Get vehicles data via the API and fill combobox
 	onTypeSelect(): void {
 		if (this.tipoSelecionado.length == 0) return;
-		debugger;
 		this.automobileService.getList(this.tipoSelecionado[0])
 			.subscribe(ret => {
 				console.log(ret);
@@ -58,7 +52,7 @@ export class RegisterComponent implements OnInit {
 
 	//FT-01# Send the create request to the API and show the returned message
 	onSubmit(): void {
-		this.userService.create(this.nome, this.sobrenome, this.telefone, this.email, this.senha, this.automovelSelecionado[0], this.quilometragem)
+		this.userService.create(this.usuario)
 			.subscribe(ret => {
 				console.log(ret);
 				this.notifyService.showSuccess(ret.message, "Sucesso!");
