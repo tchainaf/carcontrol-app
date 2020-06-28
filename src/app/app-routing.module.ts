@@ -9,6 +9,7 @@ import { HowitworksComponent } from './howitworks/howitworks.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AutomobileComponent } from './automobile/automobile.component';
+import { ComplistComponent } from './complist/complist.component';
 
 const routes: Routes = [{
 	path: 'login',
@@ -41,6 +42,10 @@ const routes: Routes = [{
 {
 	path: 'profile',
 	component: ProfileComponent
+},
+{
+	path: 'complist',
+	component: ComplistComponent
 },
 {
 	path: '',

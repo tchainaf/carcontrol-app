@@ -1,15 +1,36 @@
-button{
-    background-color: #96DFCE;
-    border-radius: 40px;
-    height: 40px;
-    box-shadow: 1px 1px 2px #dcdcdc;
-    border: 1px solid #96DFCE;
-    font-size: 14px;
-    color: #000000;
-    margin: 2px;
+.row {
+	display: block;
+}
+section {
+    float: center;
+    text-align: center;
+	left:50%;
+	top:50%;
+    height: auto;
 }
 
-button:hover{
-    background-color:#203C7F;
-    border: 1px solid #203C7F;
+button{
+    background-color: #973C6C;
+    border-radius: 40px;
+    height: 50px;
+    box-shadow: 1px 1px 2px #dcdcdc;
+    border: 1px solid #973C6C;
+}
+.cadastro1{
+    padding: 2%;
+}
+.cadastro2{
+    float: center;
+    padding: 2%;
+    margin-bottom: -1%;
+}
+
+ng-select{
+    width: 100%;
+    float: center;
+    text-align: center;
+}
+
+label{
+    margin-right: 6px;
 }
