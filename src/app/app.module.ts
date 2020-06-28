@@ -8,24 +8,24 @@ import { NgSelectModule } from '@ng-select/ng-select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './external/login/login.component';
+import { RegisterComponent } from './external/register/register.component';
 
 import { CookieService } from 'ngx-cookie-service';
 import { NotificationService } from './services/notification.service';
 import { AuthService } from './services/auth.service';
 import { UserService } from './services/user.service';
 import { AutomobileService } from './services/automobile.service';
-import { NewcompComponent } from './newcomp/newcomp.component';
-import { AboutusComponent } from './aboutus/aboutus.component';
-import { HowitworksComponent } from './howitworks/howitworks.component';
+import { NewcompComponent } from './internal/newcomp/newcomp.component';
+import { AboutusComponent } from './external/aboutus/aboutus.component';
+import { HowitworksComponent } from './external/howitworks/howitworks.component';
 import { FooterComponent } from './template/footer/footer.component';
 import { HeaderComponent } from './template/header/header.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
-import { AutomobileComponent } from './automobile/automobile.component';
-import { ComplistComponent } from './complist/complist.component';
+import { DashboardComponent } from './internal/dashboard/dashboard.component';
+import { HomeComponent } from './external/home/home.component';
+import { ProfileComponent } from './internal/profile/profile.component';
+import { AutomobileComponent } from './internal/automobile/automobile.component';
+import { ComplistComponent } from './internal/complist/complist.component';
 
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatExpansionModule} from '@angular/material/expansion';

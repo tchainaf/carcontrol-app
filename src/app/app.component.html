@@ -1,30 +1,7 @@
-<div class="wrapper" style="background-color: white;">
 
-    <mat-drawer-container class="example-container" autosize style="height: 100%;">
-        <!-- NAVEGAÇÃO LATERAL -->
-        <!-- <app-header></app-header> -->
-        <mat-drawer #drawer class="example-sidenav" mode="side">
-            <a href="/dashboard">HOME</a><br>
-            <a href="/profile">MEU PERFIL</a><br>
-            <a href="/automobile">MEU AUTOMÓVEL</a><br>
-            <a href="/complist">MINHAS PEÇAS</a><br>
-            <a href="/">SAIR</a><br>
-        </mat-drawer>
-        <div class="example-sidenav-content">
-            <div class="btnmenu" mat-button (click)="drawer.toggle()"><img src="assets/imgs/menuicon.png" style="margin-top: -10px;" width="60px" height="60px"></div>
-            <a href="/"><img src="assets/imgs/logo.jpeg" alt="logo" style="float: right;" width="240px" height="60px"></a>
-            <!-- <button type="button" mat-button (click)="drawer.toggle()">MENU</button> -->
-        </div>
-        <!-- FIM DA NAVEGAÇÃO LATERAL -->
-    
-        <div class="container" style="padding-bottom: 200px;">
-            <!-- CONTEUDO DA PAGINA -->
-            <router-outlet></router-outlet>
-            <!-- FIM DO CONTEUDO DA PAGINA -->
-        </div>
-    
-    </mat-drawer-container>
-	
+<div class="wrapper">
+	<app-header></app-header>
+	<router-outlet></router-outlet>
 </div>
 
 <app-footer></app-footer>

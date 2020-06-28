@@ -22,6 +22,8 @@ html, body {
     width: 100%;
 }
 
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 .row{
 	display: flex;
 	flex-wrap: wrap;
@@ -70,63 +72,10 @@ label{
     margin-right: 6px;
 }
 
-// html, body { height: 100%; }
-// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-// MENU LATERAL
-.example-container {
-    width: 100%;
-    height: 700px;
-    margin-top: -1.5%;
-    // border-top: solid 1px black;
-  }
-  
-  .example-sidenav-content {
-    display: flex;
-    height:93px;
-    padding-top:35px;
-    margin-bottom: 20px;;
-    align-items: bottom;
-    justify-content: center;
-    background-color: #004AAB;
-  }
-  
-  .example-sidenav {
-    padding-top: 150px;
-    padding-left: 40px;
-    background-color: white;
-    color: #004AAB;
-    width: 20%;
-    height: 100%;
-    font-size: 14px;
-  }
-
-
-  .btnmenu{
-    float: left;
-    padding: 8px;
-    background-color:#004AAB;
-    color: white;
-    width: 100%;
-    border: 1px solid #004AAB;
-    text-align: left;
-    left: 0;
-    border-radius: 0px;
-    box-shadow: none;
-    margin: -0.1%;
-    font-size: 14px;
-}
-.btnmenu:hover{
-    letter-spacing: 1px;
-    cursor: pointer;
-}
-
-  //FIM MENU LATERAL
-  
-  a {
+a {
       color: #004AAB;
-  }
+}
 
-  a:hover{
+a:hover{
     color: #96DFCE;
-  }
+}
