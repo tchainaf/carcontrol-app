@@ -9,17 +9,25 @@
 	</div>
 	<div class="row">
 		<label for="sobrenome">SOBRENOME:</label>
+		<label *ngIf="!editable"> {{ usuario.sobrenome }} </label>
+		<input *ngIf="editable" id="sobrenome" type="text" [(ngModel)]="usuario.sobrenome" style="width:300px">
 	</div>
 	<div class="row">
 		<label for="telefone">TELEFONE:</label>
+		<label *ngIf="!editable"> {{ usuario.telefone }} </label>
+		<input *ngIf="editable" id="telefone" type="text" [(ngModel)]="usuario.telefone" style="width:200px">
 	</div>
 	<div class="row">
 		<label for="email">EMAIL:</label>
+		<label *ngIf="!editable"> {{ usuario.email }} </label>
+		<input *ngIf="editable" id="email" type="text" [(ngModel)]="usuario.email" style="width:700px">
 	</div>
 	<div class="row">
 		<label for="senha">SENHA:</label>
-	</div>
-	<br><br>
-	<button class="btn btn-primary" style="width:200px" (click)="onEdit()">EDITAR PERFIL</button>
-	<button class="btn btn-primary" style="width:200px" (click)="onDelete()">EXCLUIR PERFIL</button>
+		<input *ngIf="editable" id="senha" type="password" [(ngModel)]="usuario.senha" style="width:300px">
+	</div><br><br><br><br>
+	<button class="btn btn-primary" style="width:200px" (click)="onSubmit()" *ngIf="editable">SALVAR</button>
+	<button class="btn btn-primary" style="width:200px" (click)="onCancel()" *ngIf="editable">CANCELAR</button>
+	<button class="btn btn-primary" style="width:200px" (click)="onEdit()" *ngIf="!editable">EDITAR PERFIL</button>
+	<button class="btn btn-primary" style="width:200px" (click)="onDelete()" *ngIf="!editable">EXCLUIR PERFIL</button>
 </div>

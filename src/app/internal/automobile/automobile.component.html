@@ -1,15 +1,52 @@
-<div class="container" style="padding-bottom: 700px;">
+<div class="container">
 	<br>
 	<h2>Meu Automóvel</h2>
 	<br>
 	<div class="row">
-		<label for="nome">TIPO DE AUTOMOVEL:</label>
+		<label for="nome">TIPO DE AUTOMOVEL: </label>
+		<label *ngIf="!editable"> {{ auto.tipo }} </label>
 	</div>
 	<div class="row">
-		<label for="sobrenome">AUTOMOVEL:</label>
+		<label for="marca">MARCA: </label>
+		<label *ngIf="!editable"> {{ auto.marca }} </label>
 	</div>
 	<div class="row">
-		<label for="telefone">QUILOMETRAGEM RODADA:</label>
-	</div><br><br>
+		<label for="modelo">MODELO: </label>
+		<label *ngIf="!editable"> {{ auto.modelo }} </label>
+	</div>
+	<div class="row">
+		<label for="ano">ANO: </label>
+		<label *ngIf="!editable"> {{ auto.ano }} </label>
+	</div>
+	<div class="row">
+		<label for="cor">COR: </label>
+		<label *ngIf="!editable"> {{ auto.cor }} </label>
+	</div>
+	<br>
 	<button *ngIf="!editable" class="btn btn-primary" style="width:250px" (click)="onEdit()">TROCAR AUTOMOVEL</button>
+	<br><br>
+	<h2 *ngIf="editable"> Informações do Novo Automóvel:</h2>
+	<div class="row">
+		<label *ngIf="editable" for="Tipo de Automovel">TIPO DE AUTOMÓVEL:</label>
+		<ng-select *ngIf="editable" id='tipo_automovel' [items]="tipos" bindValue="Tipo_ID" bindLabel="tipo"
+			multiple="false" [virtualScroll]="true" placeholder="Selecione o Tipo" [(ngModel)]="tipoSelecionado"
+			(change)="onTypeSelect()">
+		</ng-select>
+	</div>
+	<br>
+	<div class="row">
+		<label *ngIf="editable" for="Automovel">AUTOMÓVEL:</label>
+		<ng-select *ngIf="editable" id='automovel' [items]="automoveis" bindValue="Automovel_ID" bindLabel="desc"
+			multiple="false" [virtualScroll]="true" placeholder="Selecione o Automóvel" [(ngModel)]="auto.automovel_id">
+		</ng-select>
+	</div>
+	<br>
+	<div class="row">
+		<label *ngIf="editable" for="quilometragem">QUILOMETRAGEM RODADA:</label>
+		<input *ngIf="editable" id="quilometragem" type="text" [(ngModel)]="quilometragem">
+	</div>
+	<br>
+
+	<button *ngIf="editable" class="btn btn-primary" (click)="onSubmit()" style="width:200px">ATUALIZAR</button>
+	<button *ngIf="editable" class="btn btn-primary" (click)="onCancel()" style="width:200px">CANCELAR</button>
 </div>
