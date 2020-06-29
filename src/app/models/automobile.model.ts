@@ -1,5 +1,6 @@
 export class Automobile {
-	id_automovel: number;
+	automovel_id: number;
+	tipo: string;
 	marca: string;
 	modelo: string;
 	ano: number;

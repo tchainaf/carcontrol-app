@@ -1,16 +1,15 @@
 <div class="container" style="padding-bottom: 700px;">
-    <br>
-    <h2>Meu Automóvel</h2>
-    <br>
-    <div class="row">
-        <label for="nome">TIPO DE AUTOMOVEL:</label>
-    </div>
-    <div class="row">
-        <label for="sobrenome">AUTOMOVEL:</label>
-    </div>
-    <div class="row">
-        <label for="telefone">QUILOMETRAGEM RODADA:</label>
-    </div><br><br>
-    <button class="btn btn-primary" style="width:250px">EDITAR AUTOMOVEL</button><button class="btn btn-primary"
-    style="width:250px">EXCLUIR AUTOMOVEL</button>
+	<br>
+	<h2>Meu Automóvel</h2>
+	<br>
+	<div class="row">
+		<label for="nome">TIPO DE AUTOMOVEL:</label>
+	</div>
+	<div class="row">
+		<label for="sobrenome">AUTOMOVEL:</label>
+	</div>
+	<div class="row">
+		<label for="telefone">QUILOMETRAGEM RODADA:</label>
+	</div><br><br>
+	<button *ngIf="!editable" class="btn btn-primary" style="width:250px" (click)="onEdit()">TROCAR AUTOMOVEL</button>
 </div>
