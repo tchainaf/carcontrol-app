@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
 import { AuthService } from '../../services/auth.service';
 import { NotificationService } from '../../services/notification.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-login',
@@ -10,13 +10,12 @@ import { NotificationService } from '../../services/notification.service';
 })
 export class LoginComponent implements OnInit {
 
-	constructor(private authService: AuthService,
-		private notifyService: NotificationService,
-		private cookieService: CookieService) { }
+	constructor(private route: Router,
+		private authService: AuthService,
+		private notifyService: NotificationService) { }
 
 	email: string;
 	senha: string;
-
 
 	ngOnInit(): void {
 
@@ -26,15 +25,8 @@ export class LoginComponent implements OnInit {
 	onSubmit(): void {
 		this.authService.login(this.email, this.senha)
 			.subscribe(ret => {
-				console.log(ret);
-				this.notifyService.showSuccess(ret.message, "Sucesso!");
-
-				//#FT-01# Save jwt on a cookie
-				if (ret.auth) {
-					this.cookieService.set('jwt', ret.token);
-				}
+				this.route.navigateByUrl('/dashboard');
 			}, error => {
-				console.log(error);
 				this.notifyService.showError(error.message, "Erro!");
 			});
 	}
