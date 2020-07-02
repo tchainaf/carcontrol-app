@@ -19,6 +19,8 @@ export class HeaderComponent implements OnInit {
 		this.authService.getLoggedIn.subscribe(ret => {
 			this.isLogged = ret;
 		})
+
+		this.authService.isLogged();
 	}
 
 	//#BF-02# Logout implemented

@@ -28,12 +28,8 @@ export class AutomobileComponent implements OnInit {
 	ngOnInit(): void {
 		this.automobileService.read()
 			.subscribe(ret => {
-				console.log(ret);
 				this.auto = ret.auto;
-				this.notifyService.showSuccess(ret.message, "Sucesso!");
 			}, error => {
-				debugger;
-				console.log(error);
 				this.notifyService.showError(error.message, "Erro!");
 			});
 	}
@@ -43,23 +39,19 @@ export class AutomobileComponent implements OnInit {
 		this.editable = true;
 		this.automobileService.getTypes()
 			.subscribe(ret => {
-				console.log(ret);
 				this.tipos = ret.items;
 			}, error => {
-				console.log(error);
 				this.notifyService.showError("Não foi possível carregar a lista de tipo de veículos.", "Erro!");
 			});
 	}
 
 	//FT-03# Get vehicles data via the API and fill combobox
 	onTypeSelect(): void {
-		if (this.tipoSelecionado.length == 0) return;
-		this.automobileService.getList(this.tipoSelecionado[0])
+		if (this.tipoSelecionado == null) return;
+		this.automobileService.getList(this.tipoSelecionado)
 			.subscribe(ret => {
-				console.log(ret);
 				this.automoveis = ret.items;
 			}, error => {
-				console.log(error);
 				this.notifyService.showError("Não foi possível carregar a lista de veículos.", "Erro!");
 			});
 	}
@@ -68,12 +60,9 @@ export class AutomobileComponent implements OnInit {
 	onSubmit(): void {
 		this.automobileService.update(this.auto.automovel_id, this.quilometragem)
 			.subscribe(ret => {
-				console.log(ret);
 				this.editable = false;
 				this.notifyService.showSuccess(ret.message, "Sucesso!");
 			}, error => {
-				debugger;
-				console.log(error);
 				this.notifyService.showError(error.message, "Erro!");
 			});
 	}

@@ -40,6 +40,11 @@ export class AuthService {
 		this.getLoggedIn.emit(false);
 	}
 
+	//#BF-02# Check if user is logged
+	isLogged(): void {
+		this.getLoggedIn.emit(this.cookieService.check('jwt'));
+	}
+
 	//FT-01# Handle request API errors
 	handleError(error: HttpErrorResponse) {
 		let errorMessage = `Error Code: ${error.status}\nMessage: ${error.error.message}\nDetails: ${error.error.details}`;

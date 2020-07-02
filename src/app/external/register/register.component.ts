@@ -29,23 +29,19 @@ export class RegisterComponent implements OnInit {
 	ngOnInit(): void {
 		this.automobileService.getTypes()
 			.subscribe(ret => {
-				console.log(ret);
 				this.tipos = ret.items;
 			}, error => {
-				console.log(error);
 				this.notifyService.showError("Não foi possível carregar a lista de tipo de veículos.", "Erro!");
 			});
 	}
 
 	//FT-01# Get vehicles data via the API and fill combobox
 	onTypeSelect(): void {
-		if (this.tipoSelecionado.length == 0) return;
-		this.automobileService.getList(this.tipoSelecionado[0])
+		if (this.tipoSelecionado == null) return;
+		this.automobileService.getList(this.tipoSelecionado)
 			.subscribe(ret => {
-				console.log(ret);
 				this.automoveis = ret.items;
 			}, error => {
-				console.log(error);
 				this.notifyService.showError("Não foi possível carregar a lista de veículos.", "Erro!");
 			});
 	}
@@ -54,10 +50,8 @@ export class RegisterComponent implements OnInit {
 	onSubmit(): void {
 		this.userService.create(this.usuario)
 			.subscribe(ret => {
-				console.log(ret);
 				this.notifyService.showSuccess(ret.message, "Sucesso!");
 			}, error => {
-				console.log(error);
 				this.notifyService.showError(error.message, "Erro!");
 			});
 	}

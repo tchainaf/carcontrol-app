@@ -34,7 +34,7 @@
 			<h2>Cadastre seu primeiro carro:</h2><br>
 			<div class="row">
 				<label>TIPO DE AUTOMÓVEL:</label>
-				<ng-select id='tipo_automovel' [items]="tipos" bindValue="Tipo_ID" bindLabel="tipo" multiple="false"
+				<ng-select id='tipo_automovel' [items]="tipos" bindValue="Tipo_ID" bindLabel="tipo"
 					[virtualScroll]="true" placeholder="Selecione o Tipo" [(ngModel)]="tipoSelecionado"
 					(change)="onTypeSelect()">
 				</ng-select>
@@ -43,7 +43,7 @@
 			<div class="row">
 				<label>AUTOMÓVEL:</label>
 				<ng-select id='automovel' [items]="automoveis" bindValue="Automovel_ID" bindLabel="desc"
-					multiple="false" [virtualScroll]="true" placeholder="Selecione o Automóvel"
+					[virtualScroll]="true" placeholder="Selecione o Automóvel"
 					[(ngModel)]="usuario.automovel.automovel_id">
 				</ng-select>
 			</div>
