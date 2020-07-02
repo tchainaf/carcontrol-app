@@ -10,7 +10,6 @@ import { CookieService } from 'ngx-cookie-service';
 
 export class AutomobileService {
 	apiUrl: string = 'http://localhost:3000/api/auto';
-	headers = new HttpHeaders().set('Content-Type', 'application/json');
 
 	constructor(private http: HttpClient,
 		private cookieService: CookieService) { }
