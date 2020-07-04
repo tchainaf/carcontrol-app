@@ -1,73 +1,72 @@
 <div class="row">
-	<div class="col-sm-3">
-		<!-- <div class="secao1">
-			<h3>BEM VINDO, <label>Fulano</label></h3>
-		</div> -->
-
-		<div class="secao1">
-			<h3>Minha Quilometragem</h3>
-			<div class="lista" style="height:140px" style="width:97%">
-				<label></label>
+	<!-- LATERAL ESQUERDA-->
+	<div class="col-sm-7">
+		<div class="row">
+			<h2>BEM VIND@, <label style="font-size: 30px;">{{usuario.nome}}</label></h2>
+		</div>
+		<div class="row" style="float: center;">
+			<div class="section">
+				<h3 style="float: center;">MINHA QUILOMETRAGEM:</h3>
+				<div class="lista" style="height:140px" style="float:center" style="width:100%">
+					<label>{{usuario.quilometragem}}</label>
+				</div>
 			</div>
-			<p>Insira a atual quilometragem:</p>
-			<input><br>
-			<button style="width:94%">ATUALIZAR QUILOMETRAGEM</button>
+
 		</div>
 
-		<!-- BARRA LATERAL -->
-		<div class="secao1">
+		<!-- ARTIGOS -->
+		<div class="row">
+			<h2>Artigos</h2>
+		</div>
+		<div class="row">
+			<div class="article">
+				<a target="_blank" style="color:black"
+					href="https://chiptronic.com.br/blog/4-passos-para-encontrar-o-melhor-fornecedor-de-autopecas">
+					<img src="assets/imgs/4passos.jpg" width="100%"><br><br>
+					<p style="font-size: 20px;">4 passos para encontrar o melhor fornecedor de autopeças</p>
+				</a>
+			</div>
+			<div class="article">
+				<a target="_blank" style="color:black"
+					href="https://www.abracomex.org/camex-reduz-para-2-tarifa-de-importacao-de-varios-tipos-de-autopecas">
+					<img src="assets/imgs/crescem-vendas.jpg" width="100%"><br><br>
+					<p style="font-size: 20px;">Camex reduz para 2% tarifa de importação de vários tipos de autopeças
+					</p>
+				</a>
+			</div>
+			<!-- FIM ARTIGOS -->
+		</div>
+
+	</div>
+	<!-- FIM LATERAL ESQUERDA-->
+
+	<!-- LATERAL DIREITA-->
+	<div class="col-sm-5">
+		<div class="section">
+			<p>Insira a atual quilometragem:</p>
+			<input><br>
+			<button style="width:94%">ATUALIZAR QUILOMETRAGEM</button><br><br><br>
+
 			<h3>Minhas peças</h3>
 			<p>Próxima troca de Peça:</p>
 			<div class="lista" style="height:140px" style="width:97%">
-				<label></label>
+				<label>{{nextExchange}}</label>
 			</div><br>
 			<p>Quantidade de Peças Cadastradas:</p>
 			<div class="lista" style="height:140px" style="width:97%">
-				<label></label>
+				<label>{{parts}}</label>
 			</div><br>
-			<p>Principais motivos de troca:</p>
+			<p>Principal motivo de troca:</p>
 			<div class="lista" style="height:140px" style="width:97%">
-				<label></label>
+				<label>{{mainReason}}</label>
 			</div><br>
-			<p>Categorias mais trocadas:</p>
+			<p>Categoria mais trocada:</p>
 			<div class="lista" style="height:140px" style="width:97%">
-				<label></label>
+				<label>{{category}}</label>
 			</div><br>
 			<a href="/"><button style="width:94%">ADICIONAR PEÇA</button></a>
 		</div>
-		<!-- FIM BARRA LATERAL -->
 	</div>
+	<!-- FIM LATERAL DIREITA-->
 
-	<!-- AQUI A GENTE INSERE A DASHBOARD DO POWER BI -->
-	<div class="col-sm-9">
-		<div class="row">
-				<h3 style="margin: 10px">BEM VINDO, <label>Fulano</label></h3>
-			<!-- <div class="col-sm-4">
-				<div class="secao2">
-					<h3 style="font-size: 20px;">MINHA QUILOMETRAGEM ATUAL:
-						<div class="lista" style="height:140px" style="width:97%">
-							<label></label>
-						</div>
-					</h3>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="secao2">
-					<h3>BEM VINDO, <br><label>Fulano</label></h3>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="secao2">
-					<h3>BEM VINDO, <br><label>Fulano</label></h3>
-				</div>
-			</div> -->
-		</div>
-
-		<div class="row">
-			<div class="dashboard">
-				<p>Dashboard</p>
-			</div>
-		</div>
-	</div>
-	<!-- FIM DA DASH -->
 </div>
