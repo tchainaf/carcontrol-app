@@ -4,6 +4,7 @@ import { UserService } from '../../services/user.service';
 import { NotificationService } from '../../services/notification.service';
 import { User } from 'src/app/models/user.model';
 import { Router } from '@angular/router';
+import { Automobile } from 'src/app/models/automobile.model';
 
 @Component({
 	selector: 'app-profile',
@@ -26,6 +27,8 @@ export class ProfileComponent implements OnInit {
 		this.userService.read()
 			.subscribe(ret => {
 				this.usuario = ret.user;
+				this.usuario.automovel = new Automobile;
+				this.usuario.automovel.automovel_id = ret.user.Automovel_ID;
 			}, error => {
 				this.notifyService.showError(error.message, "Erro!");
 			});
