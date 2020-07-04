@@ -50,9 +50,8 @@ export class CompService {
 	}
 
 	//FT-04# Send the update request to the API
-	update(peca_id: number, categoria: string, motivo_id: number): Observable<any> {
+	insertOrUpdate(obj: any): Observable<any> {
 		var headers = new HttpHeaders().set('authorization', this.cookieService.get('jwt'));
-		var obj = { peca_id, categoria, motivo_id };
 		return this.http.post(this.apiUrl + '/put', obj, { headers })
 			.pipe(
 				catchError(this.handleError)

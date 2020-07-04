@@ -1,22 +1,21 @@
-<mat-drawer-container class="example-container" autosize style="height: 100%;">
-    <!-- NAVEGAÇÃO LATERAL -->
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-        <a href="/dashboard" style="color:white">HOME</a><br>
-        <a href="/profile" style="color:white">MEU PERFIL</a><br>
-        <a href="/automobile" style="color:white">MEU AUTOMÓVEL</a><br>
-        <a href="/complist" style="color:white">MINHAS PEÇAS</a><br>
-        <a href="/" style="color:white">SAIR</a><br>
-    </mat-drawer>
-    <div class="example-sidenav-content">
-        <div class="btnmenu" mat-button (click)="drawer.toggle()"> MENU</div>
-        <!-- <button type="button" mat-button (click)="drawer.toggle()">MENU</button> -->
-    </div>
-    <!-- FIM DA NAVEGAÇÃO LATERAL -->
+<div class="container" style="padding-bottom: 700px;">
+	<br>
+	<h2>Cadastre Suas Peças</h2><br>
+	<h3>{{ message }}</h3>
 
-    <div class="container" style="padding-bottom: 700px;">
-        <!-- CONTEUDO DA PAGINA -->
-        
-        <!-- FIM DO CONTEUDO DA PAGINA -->
-    </div>
+	<mat-expansion-panel *ngFor="let cat of categorias; let i = index" (opened)="onCategorySelect(cat, i)"
+		[expanded]="indexExpanded == i">
+		<mat-expansion-panel-header>
+			<mat-panel-title>
+				<b>{{ cat.categoria }}</b>
+			</mat-panel-title>
+		</mat-expansion-panel-header>
+		<div *ngFor="let peca of cat.pecas">
+			<p (click)="onCompSelect(cat.categoria, peca.Peca_ID)">{{ peca.nome }} - {{ peca.modelo }}</p>
+		</div>
+	</mat-expansion-panel>
 
-</mat-drawer-container>
+	<br><br><br><br>
+	<button class="btn btn-primary" style="width:200px" (click)="onSubmit()">SALVAR</button>
+
+</div>

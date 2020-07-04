@@ -49,6 +49,15 @@ export class AutomobileService {
 			);
 	}
 
+	//FT-05# Send the update kilometers request to the API
+	updateKilometers(quilometragem: number): Observable<any> {
+		var headers = new HttpHeaders().set('authorization', this.cookieService.get('jwt'));
+		return this.http.post(this.apiUrl + '/kilometers', { quilometragem }, { headers })
+			.pipe(
+				catchError(this.handleError)
+			);
+	}
+
 	//FT-01# Handle request API errors
 	handleError(error: HttpErrorResponse) {
 		let errorMessage = `Error Code: ${error.status}\nMessage: ${error.error.message}`;

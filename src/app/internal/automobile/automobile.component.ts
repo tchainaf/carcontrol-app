@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Automobile } from 'src/app/models/automobile.model';
 import { AutomobileService } from 'src/app/services/automobile.service';
 import { NotificationService } from 'src/app/services/notification.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-automobile',
@@ -14,14 +15,11 @@ export class AutomobileComponent implements OnInit {
 	auto: Automobile;
 	quilometragem: number;
 	tipoSelecionado: any;
-
 	tipos: { [key: string]: Object; }[];
-	public fieldsTypeAuto: Object = { text: 'tipo', value: 'Tipo_ID' };
-
 	automoveis: { [key: string]: Object; }[];
-	public fieldsAutomobile: Object = { text: 'Name', value: 'id_automovel' };
 
-	constructor(private automobileService: AutomobileService,
+	constructor(private route: Router,
+		private automobileService: AutomobileService,
 		private notifyService: NotificationService) { }
 
 	//FT-03# Get automobile data via the API and fill form
@@ -30,7 +28,12 @@ export class AutomobileComponent implements OnInit {
 			.subscribe(ret => {
 				this.auto = ret.auto;
 			}, error => {
-				this.notifyService.showError(error.message, "Erro!");
+				if (error.auth != null && !error.auth) {
+					this.notifyService.showError("Não há usuário conectado. Faça login", "Erro!");
+					this.route.navigateByUrl('/login');
+				}
+				else
+					this.notifyService.showError(error.message, "Erro!");
 			});
 	}
 

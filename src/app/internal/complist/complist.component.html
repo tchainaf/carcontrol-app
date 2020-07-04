@@ -1,17 +1,32 @@
 <div class="container" style="padding-bottom: 700px;">
 	<br>
 	<h2>Minhas Peças</h2><br>
-	<h3>Selecione uma Categoria</h3>
+	<h3>{{ message }}</h3>
 
-	<div *ngFor="let item of categorias">
-		<mat-expansion-panel>
-			<mat-expansion-panel-header>
-				<mat-panel-title>
-					{{ item }}
-				</mat-panel-title>
-			</mat-expansion-panel-header>
-			<p>This is the primary content of the panel.</p>
-		</mat-expansion-panel>
+	<mat-expansion-panel *ngFor="let cat of categorias; let i = index" (opened)="onCategorySelect(cat, i)"
+		[expanded]="indexExpanded == i">
+		<mat-expansion-panel-header>
+			<mat-panel-title>
+				<b>{{ cat.categoria }}</b>
+			</mat-panel-title>
+		</mat-expansion-panel-header>
+		<div *ngFor="let peca of cat.pecas">
+			<p *ngIf="!editable">{{ peca.nome }} - {{ peca.modelo }} - Instalação: {{ peca.Data_Instalacao }}</p>
+			<p *ngIf="editable" (click)="onCompSelect(cat.categoria, peca.peca_id)">{{ peca.nome }} - {{ peca.modelo }}
+			</p>
+		</div>
+	</mat-expansion-panel>
+
+	<div *ngIf="editable" class="row">
+		<label for="Motivo">MOTIVO DA TROCA:</label>
+		<ng-select id='Motivo' [items]="motivos" bindValue="Motivo_ID" bindLabel="motivo" [virtualScroll]="true"
+			[(ngModel)]="motivoTroca">
+		</ng-select>
 	</div>
+
+	<br><br><br><br>
+	<button class="btn btn-primary" style="width:200px" (click)="onSubmit()" *ngIf="editable">SALVAR</button>
+	<button class="btn btn-primary" style="width:200px" (click)="onCancel()" *ngIf="editable">CANCELAR</button>
+	<button class="btn btn-primary" style="width:200px" (click)="onEdit()" *ngIf="!editable">TROCAR PEÇA</button>
 
 </div>
