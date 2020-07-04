@@ -1,0 +1,40 @@
+<div class="container" style="padding-bottom: 700px;">
+	<br>
+	<h2>Meu Perfil</h2>
+
+	<div class="row">
+		<label for="nome">NOME:</label>
+		<label *ngIf="!editable"> {{ usuario.nome }} </label>
+		<input *ngIf="editable" id="nome" type="text" [(ngModel)]="usuario.nome" style="width:300px">
+	</div>
+	<div class="row">
+		<label for="sobrenome">SOBRENOME:</label>
+		<label *ngIf="!editable"> {{ usuario.sobrenome }} </label>
+		<input *ngIf="editable" id="sobrenome" type="text" [(ngModel)]="usuario.sobrenome" style="width:300px">
+	</div>
+	<div class="row">
+		<label for="telefone">TELEFONE:</label>
+		<label *ngIf="!editable"> {{ usuario.telefone }} </label>
+		<input *ngIf="editable" id="telefone" type="text" [(ngModel)]="usuario.telefone" style="width:200px">
+	</div>
+	<div class="row">
+		<label for="email">EMAIL:</label>
+		<label *ngIf="!editable"> {{ usuario.email }} </label>
+		<input *ngIf="editable" id="email" type="text" [(ngModel)]="usuario.email" style="width:700px">
+	</div>
+	<div class="row" *ngIf="editable">
+		<label>Informe apenas se desejar alterar a senha</label>
+	</div>
+	<div class="row" *ngIf="editable">
+		<label for="senha">SENHA:</label>
+		<input id="senha" type="password" [(ngModel)]="usuario.senha" style="width:300px">
+	</div>
+	<div class="row" *ngIf="editable">
+		<label for="conf_senha">CONFIRMAÇÃO DE SENHA:</label>
+		<input id="conf_senha" type="password" [(ngModel)]="conf_senha" style="width:300px">
+	</div><br><br><br><br>
+	<button class="btn btn-primary" style="width:200px" (click)="onSubmit()" *ngIf="editable">SALVAR</button>
+	<button class="btn btn-primary" style="width:200px" (click)="onCancel()" *ngIf="editable">CANCELAR</button>
+	<button class="btn btn-primary" style="width:200px" (click)="onEdit()" *ngIf="!editable">EDITAR PERFIL</button>
+	<button class="btn btn-primary" style="width:200px" (click)="onDelete()" *ngIf="!editable">EXCLUIR PERFIL</button>
+</div>

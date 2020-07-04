@@ -1,0 +1,52 @@
+<div class="container" *ngIf="!editable">
+	<br>
+	<h2>Meu Automóvel</h2>
+	<br>
+	<div class="row">
+		<label for="nome">TIPO DE AUTOMOVEL: </label>
+		<label> {{ auto.tipo }} </label>
+	</div>
+	<div class="row">
+		<label for="marca">MARCA: </label>
+		<label> {{ auto.marca }} </label>
+	</div>
+	<div class="row">
+		<label for="modelo">MODELO: </label>
+		<label> {{ auto.modelo }} </label>
+	</div>
+	<div class="row">
+		<label for="ano">ANO: </label>
+		<label> {{ auto.ano }} </label>
+	</div>
+	<div class="row">
+		<label for="cor">COR: </label>
+		<label> {{ auto.cor }} </label>
+	</div>
+	<br>
+	<button class="btn btn-primary" style="width:250px" (click)="onEdit()">TROCAR AUTOMOVEL</button>
+</div>
+<div class="container" *ngIf="editable">
+	<h2> Informações do Novo Automóvel:</h2>
+	<div class="row">
+		<label for="Tipo de Automovel">TIPO DE AUTOMÓVEL:</label>
+		<ng-select id='tipo_automovel' [items]="tipos" bindValue="Tipo_ID" bindLabel="tipo" [virtualScroll]="true"
+			placeholder="Selecione o Tipo" [(ngModel)]="tipoSelecionado" (change)="onTypeSelect()">
+		</ng-select>
+	</div>
+	<br>
+	<div class="row">
+		<label for="Automovel">AUTOMÓVEL:</label>
+		<ng-select id='automovel' [items]="automoveis" bindValue="Automovel_ID" bindLabel="desc" [virtualScroll]="true"
+			placeholder="Selecione o Automóvel" [(ngModel)]="auto.automovel_id">
+		</ng-select>
+	</div>
+	<br>
+	<div class="row">
+		<label for="quilometragem">QUILOMETRAGEM RODADA:</label>
+		<input id="quilometragem" type="number" [(ngModel)]="quilometragem">
+	</div>
+	<br>
+
+	<button class="btn btn-primary" (click)="onSubmit()" style="width:200px">ATUALIZAR</button>
+	<button class="btn btn-primary" (click)="onCancel()" style="width:200px">CANCELAR</button>
+</div>

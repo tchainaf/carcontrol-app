@@ -1,9 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+/*paleta utilizada
+#58646D cinza
+#F0E79D amarelo
+#96DFCE turquesa
+#004AAB azul
+#973C6C rosa*/
 @import "~@ng-select/ng-select/themes/ant.design.theme.css";
+
+h2{
+	text-align: center;
+	font-size: 35px;
+}
+
+
+h3{
+	text-align: center;
+	font-size: 30px;
+}
 
 html, body {
     height: 100%;
+    width: 100%;
 }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+p {font-family: Roboto, "Helvetica Neue", sans-serif;}
 
 .row{
 	display: flex;
@@ -12,9 +33,9 @@ html, body {
 }
 
 input{
-	background-color: #f5f5f5;
-	border-radius: 40px;
-	height: 50px;
+	background-color: #fcfcfc;
+	border-radius: 6px;
+	height: 35px;
 	border: 1px solid #dcdcdc;
 	padding-left: 13px;
 	color: #8E8E8E;
@@ -24,9 +45,40 @@ input{
 button{
     background-color: #973C6C;
     border-radius: 40px;
+    margin: 2px;
     height: 50px;
     box-shadow: 1px 1px 2px #dcdcdc;
-    border: 1px solid #973C6C;
+	border: 1px solid #973C6C;
+	color: white;
     letter-spacing: 2px;
-    font-size: 20px;
+    float: center;
+}
+
+button:hover{
+	background-color: #004AAB;
+	border: 1px solid #004AAB;
+}
+
+a:link
+{
+ text-decoration:none;
+}
+
+.secao{
+	padding: 60px;
+	font-size: 42px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+label{
+    margin-right: 6px;
+}
+
+a {
+      color: #004AAB;
+}
+
+a:hover{
+    color: #96DFCE;
 }

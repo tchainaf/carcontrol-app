@@ -1,0 +1,37 @@
+.row {
+	display: block;
+}
+section {
+    float: center;
+    text-align: center;
+	left:50%;
+	top:50%;
+    height: auto;
+}
+
+button{
+    background-color: #973C6C;
+    border-radius: 40px;
+    height: 50px;
+    box-shadow: 1px 1px 2px #dcdcdc;
+    border: 1px solid #973C6C;
+}
+.cadastro1{
+    padding: 2%;
+	float: center;
+}
+.cadastro2{
+	float: center;
+    padding: 2%;
+    margin-bottom: -1%;
+}
+
+ng-select{
+    width: 98%;
+    float: center;
+	text-align: center;
+}
+
+h2{
+	font-size: 35px;
+}

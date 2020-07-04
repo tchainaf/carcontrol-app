@@ -1,0 +1,60 @@
+<section>
+	<div class="cadastro1">
+		<div class="conteiner">
+			<h2>Faça seu cadastro: </h2><br>
+			<div class="row">
+				<label for="nome">NOME</label>
+				<input id="nome" type="text" [(ngModel)]="usuario.nome" style="width:300px">
+			</div>
+			<br>
+			<div class="row">
+				<label for="sobrenome">SOBRENOME</label>
+				<input id="sobrenome" type="text" [(ngModel)]="usuario.sobrenome" style="width:300px">
+			</div>
+			<br>
+			<div class="row">
+				<label for="telefone">TELEFONE</label>
+				<input id="telefone" type="text" [(ngModel)]="usuario.telefone" style="width:200px">
+			</div>
+			<br>
+			<div class="row">
+				<label for="email">EMAIL</label>
+				<input id="email" type="email" [(ngModel)]="usuario.email" style="width:500px">
+			</div>
+			<br>
+			<div class="row">
+				<label for="senha">SENHA</label>
+				<input id="senha" type="password" [(ngModel)]="usuario.senha" style="width:300px">
+			</div>
+			<br>
+		</div>
+	</div>
+	<div class="cadastro2">
+		<div class="conteiner">
+			<h2>Cadastre seu primeiro carro:</h2><br>
+			<div class="row">
+				<label>TIPO DE AUTOMÓVEL:</label>
+				<ng-select id='tipo_automovel' [items]="tipos" bindValue="Tipo_ID" bindLabel="tipo"
+					[virtualScroll]="true" placeholder="Selecione o Tipo" [(ngModel)]="tipoSelecionado"
+					(change)="onTypeSelect()">
+				</ng-select>
+			</div>
+			<br>
+			<div class="row">
+				<label>AUTOMÓVEL:</label>
+				<ng-select id='automovel' [items]="automoveis" bindValue="Automovel_ID" bindLabel="desc"
+					[virtualScroll]="true" placeholder="Selecione o Automóvel"
+					[(ngModel)]="usuario.automovel.automovel_id">
+				</ng-select>
+			</div>
+			<br>
+			<div class="row">
+				<label for="quilometragem">QUILOMETRAGEM RODADA:</label>
+				<input id="quilometragem" type="text" [(ngModel)]="usuario.quilometragem">
+			</div>
+			<br>
+
+			<button class="btn btn-primary" (click)="onSubmit()" style="width:200px">CRIAR CONTA</button>
+		</div><br>
+	</div>
+</section>

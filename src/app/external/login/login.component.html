@@ -1,0 +1,19 @@
+<section>
+		<div>
+			<br><br>
+			<h2>Faça Login</h2><br>
+			<div class="row">
+				<label for="email">EMAIL</label><br>
+				<input id="email" type="text" [(ngModel)]="email" style="width:400px">
+			</div>
+			<br>
+			<div class="row">
+				<label for="senha">SENHA</label><br>
+				<input id="senha" type="password" [(ngModel)]="senha" style="width:250px">
+			</div>
+			<br>
+            <button class="btn btn-primary" (click)="onSubmit()" style="width:200px">LOGIN</button><br><br>
+            Não tem uma conta? <a href="/register">Criar Conta</a>
+		</div>
+		<br>
+	</section>
