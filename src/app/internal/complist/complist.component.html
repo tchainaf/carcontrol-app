@@ -16,12 +16,15 @@
 			</p>
 		</div>
 	</mat-expansion-panel>
-
+	<br><br>
 	<div *ngIf="editable" class="row">
 		<label for="Motivo">MOTIVO DA TROCA:</label>
-		<ng-select id='Motivo' [items]="motivos" bindValue="Motivo_ID" bindLabel="motivo" [virtualScroll]="true"
-			[(ngModel)]="motivoTroca">
+		<ng-select id='Motivo' style="width:400px ;" [items]="motivos" bindValue="Motivo_ID" bindLabel="motivo"
+			[virtualScroll]="true" [(ngModel)]="motivoTroca">
 		</ng-select>
+	</div>
+	<div *ngIf="editable" class="row">
+		<p>Após selecionar um motivo, selecione as peças na lista de categorias.</p>
 	</div>
 
 	<br><br><br><br>
