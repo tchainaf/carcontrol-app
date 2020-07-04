@@ -1,34 +1,37 @@
 <section>
-	<div class="cadastro1">
-		<div class="conteiner">
-			<h2>Faça seu cadastro: </h2><br>
-			<div class="row">
-				<label for="nome">NOME</label>
-				<input id="nome" type="text" [(ngModel)]="usuario.nome" style="width:300px">
+	<form>
+		<div class="cadastro1">
+			<div class="conteiner">
+				<h2>Faça seu cadastro: </h2><br>
+				<div class="row">
+					<label for="nome">NOME</label>
+					<input id="nome" type="text" [(ngModel)]="usuario.nome" style="width:300px">
+				</div>
+				<br>
+				<div class="row">
+					<label for="sobrenome">SOBRENOME</label>
+					<input id="sobrenome" type="text" [(ngModel)]="usuario.sobrenome" style="width:300px">
+				</div>
+				<br>
+				<div class="row">
+					<label for="telefone">TELEFONE</label>
+					<input id="telefone" type="text" [(ngModel)]="usuario.telefone" style="width:200px">
+				</div>
+				<br>
+				<div class="row">
+					<label for="email">EMAIL</label>
+					<input id="email" type="email" [(ngModel)]="usuario.email" style="width:500px">
+				</div>
+				<br>
+				<div class="row">
+					<label for="senha">SENHA</label>
+					<input id="senha" type="password" [(ngModel)]="usuario.senha" style="width:300px">
+				</div>
+				<br>
 			</div>
-			<br>
-			<div class="row">
-				<label for="sobrenome">SOBRENOME</label>
-				<input id="sobrenome" type="text" [(ngModel)]="usuario.sobrenome" style="width:300px">
-			</div>
-			<br>
-			<div class="row">
-				<label for="telefone">TELEFONE</label>
-				<input id="telefone" type="text" [(ngModel)]="usuario.telefone" style="width:200px">
-			</div>
-			<br>
-			<div class="row">
-				<label for="email">EMAIL</label>
-				<input id="email" type="email" [(ngModel)]="usuario.email" style="width:500px">
-			</div>
-			<br>
-			<div class="row">
-				<label for="senha">SENHA</label>
-				<input id="senha" type="password" [(ngModel)]="usuario.senha" style="width:300px">
-			</div>
-			<br>
 		</div>
-	</div>
+	</form>
+
 	<div class="cadastro2">
 		<div class="conteiner">
 			<h2>Cadastre seu primeiro carro:</h2><br>
