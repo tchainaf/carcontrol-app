@@ -8,58 +8,48 @@ import { CookieService } from 'ngx-cookie-service';
 	providedIn: 'root'
 })
 
-export class CompService {
-	apiUrl: string = 'http://localhost:3000/api/part';
+export class DashService {
+	apiUrl: string = 'http://localhost:3000/api/dash';
 
 	constructor(private http: HttpClient, private cookieService: CookieService) { }
 
-	//FT-04# Get categories data via the API
-	getCategories(): Observable<any> {
+	//FT-06# Get data via the API
+	getMainReason(): Observable<any> {
 		var headers = new HttpHeaders().set('authorization', this.cookieService.get('jwt'));
-		return this.http.get(this.apiUrl + '/getCategories', { headers })
+		return this.http.get(this.apiUrl + '/getMainReason', { headers })
 			.pipe(
 				catchError(this.handleError)
 			);
 	}
 
-	//FT-04# Get components data via the API
-	getList(cat: string): Observable<any> {
+	//FT-06# Get data via the API
+	getCategory(): Observable<any> {
 		var headers = new HttpHeaders().set('authorization', this.cookieService.get('jwt'));
-		return this.http.get(this.apiUrl + '/getList/' + cat, { headers })
+		return this.http.get(this.apiUrl + '/getCategory', { headers })
 			.pipe(
 				catchError(this.handleError)
 			);
 	}
 
-	//FT-04# Get components data via the API
-	getPart(cat: string): Observable<any> {
+	//FT-06# Get data via the API
+	getParts(): Observable<any> {
 		var headers = new HttpHeaders().set('authorization', this.cookieService.get('jwt'));
-		return this.http.get(this.apiUrl + '/read/' + cat, { headers })
+		return this.http.get(this.apiUrl + '/getParts', { headers })
 			.pipe(
 				catchError(this.handleError)
 			);
 	}
 
-	//FT-04# Get list of reasons to exchange via the API
-	getReasons(): Observable<any> {
+	//FT-06# Get data via the API
+	getNextExchange(): Observable<any> {
 		var headers = new HttpHeaders().set('authorization', this.cookieService.get('jwt'));
-		return this.http.get(this.apiUrl + '/getReasons', { headers })
+		return this.http.get(this.apiUrl + '/getNextExchange', { headers })
 			.pipe(
 				catchError(this.handleError)
 			);
 	}
 
-	//FT-04# Send the update request to the API
-	update(peca_id: number, categoria: string, motivo_id: number): Observable<any> {
-		var headers = new HttpHeaders().set('authorization', this.cookieService.get('jwt'));
-		var obj = { peca_id, categoria, motivo_id };
-		return this.http.post(this.apiUrl + '/put', obj, { headers })
-			.pipe(
-				catchError(this.handleError)
-			);
-	}
-
-	//FT-04# Handle request API errors
+	//FT-06# Handle request API errors
 	handleError(error: HttpErrorResponse) {
 		let errorMessage = `Error Code: ${error.status}\nMessage: ${error.error.message}`;
 		console.log(errorMessage);
