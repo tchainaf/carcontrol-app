@@ -44,13 +44,13 @@
 	<div class="col-sm-5">
 		<div class="section">
 			<p>Insira a atual quilometragem:</p>
-			<input type="number"><br>
-			<button style="width:94%">ATUALIZAR QUILOMETRAGEM</button><br><br>
+			<input type="number" [(ngModel)]="km" min="0"><br>
+			<button (click)="updateKilometers()" style="width:94%">ATUALIZAR QUILOMETRAGEM</button><br><br><br>
 
 			<h3>Minhas peças</h3>
 			<p>Próxima troca de Peça será daqui:</p>
 			<div class="labelNextExchange" style="height:140px" style="width:97%">
-				<label>{{nextExchange}}<p> KM</p></label>
+				<label>{{nextExchange}} Km</label>
 			</div><br>
 			<p>Quantidade de Peças Cadastradas:</p>
 			<div class="labels" style="height:140px" style="width:97%">
@@ -64,7 +64,7 @@
 			<div class="labels" style="height:140px" style="width:97%">
 				<label>{{category}}</label>
 			</div><br>
-			<a href="/"><button style="width:94%">ADICIONAR PEÇA</button></a>
+			<a href="/newcomp"><button style="width:94%">ADICIONAR PEÇA</button></a>
 		</div>
 	</div>
 	<!-- FIM LATERAL DIREITA-->

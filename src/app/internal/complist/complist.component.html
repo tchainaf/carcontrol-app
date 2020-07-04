@@ -1,7 +1,6 @@
 <div class="container" style="padding-bottom: 700px;">
 	<br>
 	<h2>Minhas Peças</h2><br>
-	<h3>{{ message }}</h3>
 
 	<mat-expansion-panel *ngFor="let cat of categorias; let i = index" (opened)="onCategorySelect(cat, i)"
 		[expanded]="indexExpanded == i">
@@ -12,11 +11,15 @@
 		</mat-expansion-panel-header>
 		<div *ngFor="let peca of cat.pecas">
 			<p *ngIf="!editable">{{ peca.nome }} - {{ peca.modelo }} - Instalação: {{ peca.Data_Instalacao }}</p>
-			<p *ngIf="editable" (click)="onCompSelect(cat.categoria, peca.peca_id)">{{ peca.nome }} - {{ peca.modelo }}
+			<p style="cursor: pointer;" *ngIf="editable" (click)="onCompSelect(cat.categoria, peca)">{{ peca.nome }} -
+				{{ peca.modelo }}
 			</p>
 		</div>
 	</mat-expansion-panel>
 	<br><br>
+	<div *ngIf="editable" class="row">
+		<p>Selecione um motivo e selecione a peça na lista de categorias.</p>
+	</div>
 	<div *ngIf="editable" class="row">
 		<label for="Motivo">MOTIVO DA TROCA:</label>
 		<ng-select id='Motivo' style="width:400px ;" [items]="motivos" bindValue="Motivo_ID" bindLabel="motivo"
@@ -24,7 +27,8 @@
 		</ng-select>
 	</div>
 	<div *ngIf="editable" class="row">
-		<p>Após selecionar um motivo, selecione as peças na lista de categorias.</p>
+		<label for="Motivo">Nova peça:</label>
+		<label> {{ pecaTroca }} </label>
 	</div>
 
 	<br><br><br><br>

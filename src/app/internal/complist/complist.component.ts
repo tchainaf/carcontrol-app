@@ -12,10 +12,10 @@ export class ComplistComponent implements OnInit {
 
 	categorias: any[];
 	editable: boolean = false;
-	message: string = "Selecione uma Categoria";
 	indexExpanded: number = -1;
 	compSelected: any;
 	motivoTroca: any;
+	pecaTroca: string;
 	motivos: { [key: string]: Object; }[];
 
 	constructor(private route: Router,
@@ -42,7 +42,6 @@ export class ComplistComponent implements OnInit {
 		this.indexExpanded = index == this.indexExpanded ? -1 : index;
 
 		if (this.editable) {
-			this.message = "Selecione a nova peça instalada";
 			this.compService.getList(item.categoria)
 				.subscribe(ret => {
 					console.log(ret.items);
@@ -77,8 +76,10 @@ export class ComplistComponent implements OnInit {
 			});
 	}
 
-	onCompSelect(categoria: string, peca_id: number): void {
-		this.compSelected = { peca_id, categoria };
+	onCompSelect(categoria: string, peca: any): void {
+		debugger;
+		this.compSelected = { peca_id: peca.Peca_ID, categoria };
+		this.pecaTroca = peca.nome + " - " + peca.modelo;
 	}
 
 	//FT-04# Send a update request to the API
@@ -95,6 +96,5 @@ export class ComplistComponent implements OnInit {
 	//FT-04# Cancel edition of component
 	onCancel(): void {
 		this.editable = false;
-		this.message = "Selecione uma Categoria";
 	}
 }

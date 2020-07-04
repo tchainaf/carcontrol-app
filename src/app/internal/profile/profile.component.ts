@@ -82,6 +82,7 @@ export class ProfileComponent implements OnInit {
 	//FT-02# Cancel edition of user data
 	onCancel(): void {
 		this.editable = false;
+		this.conf_senha = "";
 		this.userService.read()
 			.subscribe(ret => {
 				this.usuario = ret.user;
