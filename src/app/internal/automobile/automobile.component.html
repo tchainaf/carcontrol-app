@@ -30,14 +30,14 @@
 	<div class="row">
 		<label for="Tipo de Automovel">TIPO DE AUTOMÓVEL:</label>
 		<ng-select id='tipo_automovel' [items]="tipos" bindValue="Tipo_ID" bindLabel="tipo" [virtualScroll]="true"
-			placeholder="Selecione o Tipo" [(ngModel)]="tipoSelecionado" (change)="onTypeSelect()">
+			[(ngModel)]="tipoSelecionado" (change)="onTypeSelect()">
 		</ng-select>
 	</div>
 	<br>
 	<div class="row">
 		<label for="Automovel">AUTOMÓVEL:</label>
 		<ng-select id='automovel' [items]="automoveis" bindValue="Automovel_ID" bindLabel="desc" [virtualScroll]="true"
-			placeholder="Selecione o Automóvel" [(ngModel)]="auto.automovel_id">
+			[(ngModel)]="auto.automovel_id">
 		</ng-select>
 	</div>
 	<br>

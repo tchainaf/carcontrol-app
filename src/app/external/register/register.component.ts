@@ -3,8 +3,6 @@ import { AutomobileService } from '../../services/automobile.service';
 import { UserService } from '../../services/user.service';
 import { NotificationService } from '../../services/notification.service';
 import { User } from '../../models/user.model';
-import { FormGroup } from '@angular/forms';
-import { isNumber } from 'util';
 
 @Component({
 	selector: 'app-register',
@@ -19,13 +17,10 @@ export class RegisterComponent implements OnInit {
 	) { }
 
 	usuario: User;
+	conf_senha: string;
 	tipoSelecionado: any;
-
 	tipos: { [key: string]: Object; }[];
-	public fieldsTypeAuto: Object = { text: 'tipo', value: 'Tipo_ID' };
-
 	automoveis: { [key: string]: Object; }[];
-	public fieldsAutomobile: Object = { text: 'Name', value: 'id_automovel' };
 
 	//FT-01# Get types data via the API and fill combobox
 	ngOnInit(): void {
@@ -51,7 +46,7 @@ export class RegisterComponent implements OnInit {
 	//FT-01# Send the create request to the API and show the returned message
 	onSubmit(): void {
 
-		if (this.onValidate()){
+		if (this.onValidate()) {
 			return;
 		}
 
@@ -66,28 +61,31 @@ export class RegisterComponent implements OnInit {
 	onValidate(): boolean {
 		var validation = false;
 		if (this.usuario.nome == "" || this.usuario.nome == null || this.usuario.nome.length < 3) {
-			this.notifyService.showError("Insira um nome válido!","Erro!");
+			this.notifyService.showError("Insira um nome válido!", "Erro!");
 			validation = true
 		}
-		if (this.usuario.sobrenome == "" || this.usuario.sobrenome == null){
-			this.notifyService.showError("Insira um sobrenome válido!","Erro!");
+		if (this.usuario.sobrenome == "" || this.usuario.sobrenome == null) {
+			this.notifyService.showError("Insira um sobrenome válido!", "Erro!");
 			validation = true
 		}
-		if (this.usuario.telefone == null){
-			this.notifyService.showError("Insira um telefone","Erro!");
+		if (this.usuario.telefone == null) {
+			this.notifyService.showError("Insira um telefone", "Erro!");
 			validation = true
 		}
-		if (this.usuario.email.indexOf("@") == -1 || this.usuario.email.indexOf(".") == -1 || this.usuario.email == "" || this.usuario.email == null){
-			this.notifyService.showError("Insira email válido!","Erro!");
+		if (this.usuario.email.indexOf("@") == -1 || this.usuario.email.indexOf(".") == -1 || this.usuario.email == "" || this.usuario.email == null) {
+			this.notifyService.showError("Insira email válido!", "Erro!");
+			validation = true
+		}
+		if (this.conf_senha != null && (this.usuario.senha != this.conf_senha)) {
+			this.notifyService.showError("A senha e a confirmação de senha não são iguais!", "Erro!");
 			validation = true
 		}
 		if (this.usuario.senha == "" || this.usuario.senha == null || this.usuario.senha.length < 5) {
-			this.notifyService.showError("Insira uma senha maior que 5 caracteres","Erro!");
+			this.notifyService.showError("Insira uma senha maior que 5 caracteres", "Erro!");
 			validation = true
 		}
-		return validation
+		return validation;
 	}
-
 }
 
 
