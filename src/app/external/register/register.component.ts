@@ -3,6 +3,7 @@ import { AutomobileService } from '../../services/automobile.service';
 import { UserService } from '../../services/user.service';
 import { NotificationService } from '../../services/notification.service';
 import { User } from '../../models/user.model';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-register',
@@ -11,14 +12,23 @@ import { User } from '../../models/user.model';
 })
 export class RegisterComponent implements OnInit {
 
-	constructor(private automobileService: AutomobileService,
+	constructor(private route: Router,
+		private automobileService: AutomobileService,
 		private userService: UserService,
 		private notifyService: NotificationService
 	) { }
 
-	usuario: User;
+	nome: string;
+	sobrenome: string;
+	telefone: number;
+	email: string;
+	senha: string;
 	conf_senha: string;
-	tipoSelecionado: any;
+	quilometragem: number;
+
+	usuario: User;
+	tipoSelecionado: number;
+	automovelSelecionado: number;
 	tipos: { [key: string]: Object; }[];
 	automoveis: { [key: string]: Object; }[];
 
@@ -45,6 +55,23 @@ export class RegisterComponent implements OnInit {
 
 	//FT-01# Send the create request to the API and show the returned message
 	onSubmit(): void {
+		this.usuario = {
+			usuario_id: null,
+			nome: this.nome,
+			sobrenome: this.sobrenome,
+			telefone: this.telefone,
+			email: this.email,
+			senha: this.senha,
+			quilometragem: this.quilometragem,
+			automovel: {
+				automovel_id: this.automovelSelecionado,
+				tipo: null,
+				marca: null,
+				modelo: null,
+				ano: null,
+				cor: null
+			}
+		};
 
 		if (this.onValidate()) {
 			return;
@@ -53,10 +80,12 @@ export class RegisterComponent implements OnInit {
 		this.userService.create(this.usuario)
 			.subscribe(ret => {
 				this.notifyService.showSuccess(ret.message, "Sucesso!");
+				this.route.navigateByUrl('/login');
 			}, error => {
 				this.notifyService.showError(error.message, "Erro!");
 			});
 	}
+
 	//BF-03# Validation of inputs in the user registry
 	onValidate(): boolean {
 		var validation = false;

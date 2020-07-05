@@ -11,7 +11,8 @@
 			</mat-panel-title>
 		</mat-expansion-panel-header>
 		<div *ngFor="let peca of cat.pecas">
-			<p (click)="onCompSelect(cat.categoria, peca.Peca_ID)">{{ peca.nome }} - {{ peca.modelo }}</p>
+			<p style="cursor: pointer;" (click)="onCompSelect(cat.categoria, peca.Peca_ID)">{{ peca.nome }} -
+				{{ peca.modelo }}</p>
 		</div>
 	</mat-expansion-panel>
 

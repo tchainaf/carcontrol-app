@@ -3,27 +3,27 @@
 		<h2>Faça seu cadastro: </h2><br>
 		<div class="row">
 			<label for="nome">NOME</label>
-			<input id="nome" type="text" [(ngModel)]="usuario.nome" style="width:300px">
+			<input id="nome" type="text" [(ngModel)]="nome" style="width:300px">
 		</div>
 		<br>
 		<div class="row">
 			<label for="sobrenome">SOBRENOME</label>
-			<input id="sobrenome" type="text" [(ngModel)]="usuario.sobrenome" style="width:300px">
+			<input id="sobrenome" type="text" [(ngModel)]="sobrenome" style="width:300px">
 		</div>
 		<br>
 		<div class="row">
 			<label for="telefone">TELEFONE</label>
-			<input id="telefone" type="text" [(ngModel)]="usuario.telefone" style="width:200px">
+			<input id="telefone" type="text" [(ngModel)]="telefone" style="width:200px">
 		</div>
 		<br>
 		<div class="row">
 			<label for="email">EMAIL</label>
-			<input id="email" type="email" [(ngModel)]="usuario.email" style="width:500px">
+			<input id="email" type="email" [(ngModel)]="email" style="width:500px">
 		</div>
 		<br>
 		<div class="row">
 			<label for="senha">SENHA</label>
-			<input id="senha" type="password" [(ngModel)]="usuario.senha" style="width:300px">
+			<input id="senha" type="password" [(ngModel)]="senha" style="width:300px">
 		</div>
 		<br>
 		<div class="row">
@@ -36,7 +36,7 @@
 
 <div class="cadastro2">
 	<div class="container">
-		<h2>Cadastre seu primeiro carro:</h2><br>
+		<h2>Cadastre seu primeiro automóvel:</h2><br>
 		<div class="row">
 			<label>TIPO DE AUTOMÓVEL:</label>
 			<ng-select id='tipo_automovel' [items]="tipos" bindValue="Tipo_ID" bindLabel="tipo" [virtualScroll]="true"
@@ -47,13 +47,13 @@
 		<div class="row">
 			<label>AUTOMÓVEL:</label>
 			<ng-select id='automovel' [items]="automoveis" bindValue="Automovel_ID" bindLabel="desc"
-				[virtualScroll]="true" [(ngModel)]="usuario.automovel.automovel_id">
+				[virtualScroll]="true" [(ngModel)]="automovelSelecionado">
 			</ng-select>
 		</div>
 		<br>
 		<div class="row">
 			<label for="quilometragem">QUILOMETRAGEM RODADA:</label>
-			<input id="quilometragem" type="text" [(ngModel)]="usuario.quilometragem">
+			<input id="quilometragem" type="text" [(ngModel)]="quilometragem">
 		</div>
 		<br>
 
