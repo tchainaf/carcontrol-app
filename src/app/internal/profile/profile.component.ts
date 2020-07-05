@@ -13,7 +13,7 @@ import { Automobile } from 'src/app/models/automobile.model';
 })
 export class ProfileComponent implements OnInit {
 
-	editable: boolean = false;
+	editable: boolean;
 	usuario: User;
 	conf_senha: string;
 
@@ -24,6 +24,8 @@ export class ProfileComponent implements OnInit {
 
 	//FT-02# Get user data via the API and fill form
 	ngOnInit(): void {
+		this.editable = false;
+
 		this.userService.read()
 			.subscribe(ret => {
 				this.usuario = ret.user;
@@ -61,19 +63,14 @@ export class ProfileComponent implements OnInit {
 
 	//FT-02# Send a update request to the API
 	onSubmit(): void {
-
 		if (this.onValidate()) {
-			return;
-		}
-
-		if (this.conf_senha != null && (this.usuario.senha != this.conf_senha)) {
-			this.notifyService.showError("A senha e a confirmação de senha não são iguais!", "Erro!");
 			return;
 		}
 
 		this.userService.update(this.usuario)
 			.subscribe(ret => {
 				this.notifyService.showSuccess(ret.message, "Sucesso!");
+				this.ngOnInit();
 			}, error => {
 				this.notifyService.showError(error.message, "Erro!");
 			});
@@ -82,7 +79,7 @@ export class ProfileComponent implements OnInit {
 	//FT-02# Cancel edition of user data
 	onCancel(): void {
 		this.editable = false;
-		this.conf_senha = "";
+		this.conf_senha = null;
 		this.userService.read()
 			.subscribe(ret => {
 				this.usuario = ret.user;
@@ -100,17 +97,21 @@ export class ProfileComponent implements OnInit {
 		}
 		if (this.usuario.sobrenome == "" || this.usuario.sobrenome == null) {
 			this.notifyService.showError("Insira um sobrenome válido!", "Erro!");
-			validation = true
+			validation = true;
 		}
 		if (this.usuario.telefone == null) {
 			this.notifyService.showError("Insira um telefone", "Erro!");
-			validation = true
+			validation = true;
 		}
 		if (this.usuario.email.indexOf("@") == -1 || this.usuario.email.indexOf(".") == -1 || this.usuario.email == "" || this.usuario.email == null) {
 			this.notifyService.showError("Insira email válido!", "Erro!");
-			validation = true
+			validation = true;
+		}
+		if (this.conf_senha != null && (this.usuario.senha != this.conf_senha)) {
+			this.notifyService.showError("A senha e a confirmação de senha não são iguais!", "Erro!");
+			return;
 		}
 
-		return validation
+		return validation;
 	}
 }

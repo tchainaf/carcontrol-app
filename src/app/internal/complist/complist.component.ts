@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
 export class ComplistComponent implements OnInit {
 
 	categorias: any[];
-	editable: boolean = false;
-	indexExpanded: number = -1;
+	editable: boolean;
+	indexExpanded: number;
 	compSelected: any;
 	motivoTroca: any;
 	pecaTroca: string;
@@ -23,6 +23,9 @@ export class ComplistComponent implements OnInit {
 		private notifyService: NotificationService) { }
 
 	ngOnInit(): void {
+		this.editable = false;
+		this.indexExpanded = -1;
+
 		//FT-04# Get categories data via the API and fill list
 		this.compService.getCategories()
 			.subscribe(ret => {
@@ -88,6 +91,7 @@ export class ComplistComponent implements OnInit {
 		this.compService.insertOrUpdate(this.compSelected)
 			.subscribe(ret => {
 				this.notifyService.showSuccess(ret.message, "Sucesso!");
+				this.ngOnInit();
 			}, error => {
 				this.notifyService.showError(error.message, "Erro!");
 			});

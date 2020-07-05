@@ -59,8 +59,6 @@ export class DashboardComponent implements OnInit {
 			}, error => {
 				this.notifyService.showError("Não foi possível carregar seus dados", "Erro!");
 			});
-
-		//if(this.parts == 0)
 	}
 
 	updateKilometers(): void {
@@ -69,6 +67,13 @@ export class DashboardComponent implements OnInit {
 				this.usuario.quilometragem = this.km;
 				this.km = null;
 				this.notifyService.showSuccess(ret.message, "Sucesso!");
+
+				this.dashService.getNextExchange()
+					.subscribe(ret => {
+						this.nextExchange = ret.item.menor_km;
+					}, error => {
+						this.notifyService.showError("Não foi possível carregar seus dados", "Erro!");
+					});
 			}, error => {
 				this.notifyService.showError(error.message, "Erro!");
 			});

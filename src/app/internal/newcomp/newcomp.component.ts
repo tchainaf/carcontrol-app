@@ -11,9 +11,8 @@ import { Router } from '@angular/router';
 export class NewcompComponent implements OnInit {
 
 	categorias: any[];
-	editable: boolean = false;
 	message: string = "Selecione uma Categoria";
-	indexExpanded: number = -1;
+	indexExpanded: number;
 	compSelected: any;
 
 	constructor(private route: Router,
@@ -21,6 +20,8 @@ export class NewcompComponent implements OnInit {
 		private notifyService: NotificationService) { }
 
 	ngOnInit(): void {
+		this.indexExpanded = -1;
+
 		//FT-04# Get categories data via the API and fill list
 		this.compService.getCategories()
 			.subscribe(ret => {
@@ -60,6 +61,7 @@ export class NewcompComponent implements OnInit {
 		this.compService.insertOrUpdate(this.compSelected)
 			.subscribe(ret => {
 				this.notifyService.showSuccess(ret.message, "Sucesso!");
+				this.ngOnInit();
 			}, error => {
 				this.notifyService.showError(error.message, "Erro!");
 			});

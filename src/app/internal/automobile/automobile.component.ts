@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AutomobileComponent implements OnInit {
 
-	editable: boolean = false;
+	editable: boolean;
 	auto: Automobile;
 	quilometragem: number;
 	tipoSelecionado: any;
@@ -24,6 +24,8 @@ export class AutomobileComponent implements OnInit {
 
 	//FT-03# Get automobile data via the API and fill form
 	ngOnInit(): void {
+		this.editable = false;
+
 		this.automobileService.read()
 			.subscribe(ret => {
 				this.auto = ret.auto;
@@ -63,8 +65,8 @@ export class AutomobileComponent implements OnInit {
 	onSubmit(): void {
 		this.automobileService.update(this.auto.automovel_id, this.quilometragem)
 			.subscribe(ret => {
-				this.editable = false;
 				this.notifyService.showSuccess(ret.message, "Sucesso!");
+				this.ngOnInit();
 			}, error => {
 				this.notifyService.showError(error.message, "Erro!");
 			});
